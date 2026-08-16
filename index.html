@@ -1,443 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peach Law | Professional Legal Counsel</title>
+    
+    <!-- Google Fonts for a professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Palette & Base Styles */
+        :root {
+            --primary-navy: #1B263B;
+            --accent-peach: #E5B299;
+            --text-dark: #333333;
+            --text-light: #FFFFFF;
+            --bg-light: #F8F9FA;
+        }
 
-  <title>Peach Law | Clarity in Law. Confidence in Action.</title>
-  <meta name="description" content="Peach Law provides clear, accessible legal information and guidance.">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-navy);
+        }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f5f0;
-      color: #18212b;
-      line-height: 1.6;
-    }
+        /* Navigation */
+        header {
+            background-color: var(--text-light);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    header {
-      background: #101820;
-      color: white;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            text-decoration: none;
+        }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+        .logo span {
+            color: var(--accent-peach);
+        }
 
-    nav {
-      display: flex;
-      gap: 24px;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-    }
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
 
-    nav a:hover {
-      color: #f4a261;
-    }
+        nav a:hover {
+            color: var(--accent-peach);
+        }
 
-    .menu {
-      display: none;
-      font-size: 25px;
-      cursor: pointer;
-    }
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(27, 38, 59, 0.85), rgba(27, 38, 59, 0.85)), url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
 
-    .hero {
-      background: #101820;
-      color: white;
-      padding: 110px 8%;
-      text-align: center;
-    }
+        .hero h1 {
+            color: var(--text-light);
+            font-size: 3rem;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
 
-    .hero h1 {
-      font-size: clamp(40px, 8vw, 72px);
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-    }
+        .hero p {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
 
-    .hero h2 {
-      color: #f4a261;
-      font-size: clamp(20px, 4vw, 30px);
-      margin-bottom: 20px;
-    }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-peach);
+            color: var(--primary-navy);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
 
-    .hero p {
-      max-width: 680px;
-      margin: auto;
-      color: #d8dee4;
-      font-size: 18px;
-    }
+        .btn:hover {
+            background-color: #d49d82;
+            transform: translateY(-2px);
+        }
 
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 26px;
-      background: #f4a261;
-      color: #101820;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-    }
+        /* Practice Areas Section */
+        .practice-areas {
+            padding: 80px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
 
-    section {
-      padding: 75px 8%;
-    }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
 
-    .section-title {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 15px;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .section-intro {
-      max-width: 700px;
-      margin: 0 auto 45px;
-      text-align: center;
-      color: #59636e;
-    }
+        .card {
+            background: var(--text-light);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-peach);
+            text-align: left;
+            transition: transform 0.3s;
+        }
 
-    .about {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-    .services {
-      background: white;
-    }
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      max-width: 1100px;
-      margin: auto;
-    }
+        /* Footer & Contact */
+        footer {
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            padding: 60px 5% 20px;
+        }
 
-    .card {
-      background: #f8f5f0;
-      padding: 30px;
-      border-radius: 8px;
-      border: 1px solid #e5ddd4;
-    }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
 
-    .card h3 {
-      color: #101820;
-      margin-bottom: 12px;
-    }
+        .footer-col h3 {
+            color: var(--accent-peach);
+            margin-bottom: 20px;
+        }
 
-    .card p {
-      color: #59636e;
-    }
+        .footer-col p {
+            margin-bottom: 10px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
 
-    .why {
-      max-width: 900px;
-      margin: auto;
-    }
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
 
-    .why-item {
-      margin-bottom: 25px;
-    }
-
-    .why-item h3 {
-      margin-bottom: 5px;
-    }
-
-    .contact {
-      background: #101820;
-      color: white;
-      text-align: center;
-    }
-
-    .contact p {
-      color: #d8dee4;
-      max-width: 650px;
-      margin: 0 auto;
-    }
-
-    .contact-box {
-      max-width: 600px;
-      margin: 30px auto 0;
-    }
-
-    .contact-box input,
-    .contact-box textarea {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 14px;
-      border: none;
-      border-radius: 5px;
-      font-size: 15px;
-    }
-
-    .contact-box textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .disclaimer {
-      background: #fff3df;
-      padding: 25px 8%;
-      color: #5c4a36;
-      font-size: 14px;
-      text-align: center;
-    }
-
-    footer {
-      background: #080d12;
-      color: #aeb6bd;
-      text-align: center;
-      padding: 25px 8%;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #f4a261;
-      text-decoration: none;
-    }
-
-    @media (max-width: 750px) {
-      nav {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        right: 0;
-        background: #101820;
-        flex-direction: column;
-        padding: 20px 7%;
-        gap: 18px;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .menu {
-        display: block;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 80px 7%;
-      }
-
-      section {
-        padding: 60px 7%;
-      }
-    }
-  </style>
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Can be replaced with a hamburger menu later */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-  <header>
-    <div class="logo">PEACH LAW</div>
+    <!-- Header / Navigation -->
+    <header>
+        <a href="#" class="logo">Peach<span>Law</span></a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#practice">Practice Areas</a></li>
+                <li><a href="#about">About Firm</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="menu" onclick="toggleMenu()">☰</div>
-
-    <nav id="nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <section class="hero" id="home">
-      <h1>PEACH LAW</h1>
-      <h2>Clarity in Law. Confidence in Action.</h2>
-      <p>
-        Clear, accessible and client-focused legal information
-        designed to help you better understand your legal options.
-      </p>
-      <a class="button" href="#contact">Get in Touch</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Dedicated Legal Counsel You Can Trust</h1>
+        <p>Providing strategic, results-driven legal representation tailored to your unique needs.</p>
+        <a href="#contact" class="btn">Request a Consultation</a>
     </section>
 
-    <section id="about">
-      <h2 class="section-title">About Peach Law</h2>
-
-      <p class="section-intro">
-        A modern approach to presenting legal information with clarity,
-        professionalism and transparency.
-      </p>
-
-      <div class="about">
-        <p>
-          Peach Law is a legal-information website concept focused on
-          making complex legal topics easier to understand.
-          Our goal is to provide useful information in a simple,
-          professional and accessible format.
-        </p>
-      </div>
+    <!-- Practice Areas -->
+    <section id="practice" class="practice-areas">
+        <h2 class="section-title">Our Practice Areas</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Corporate Law</h3>
+                <p>Comprehensive legal strategies for businesses, from formation to complex mergers and acquisitions.</p>
+            </div>
+            <div class="card">
+                <h3>Civil Litigation</h3>
+                <p>Fierce advocacy in the courtroom to protect your rights and achieve favorable resolutions.</p>
+            </div>
+            <div class="card">
+                <h3>Family Law</h3>
+                <p>Compassionate guidance through difficult transitions, ensuring the best outcomes for you and your loved ones.</p>
+            </div>
+        </div>
     </section>
 
-    <section class="services" id="services">
-      <h2 class="section-title">Areas of Information</h2>
-
-      <p class="section-intro">
-        Explore general information about common areas of law.
-      </p>
-
-      <div class="cards">
-
-        <div class="card">
-          <h3>Family Law</h3>
-          <p>
-            General information about family-related legal matters,
-            rights and common legal processes.
-          </p>
+    <!-- Footer / Contact Information -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Peach Law</h3>
+                <p>Excellence in Legal Practice.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <!-- Placeholders ready for your friend's actual information -->
+                <p>Email: contact@peachlaw.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Address: 123 Legal Avenue, Suite 400, City, State 12345</p>
+            </div>
         </div>
-
-        <div class="card">
-          <h3>Business Law</h3>
-          <p>
-            General information about businesses, agreements,
-            responsibilities and legal considerations.
-          </p>
+        <div class="copyright">
+            &copy; 2026 Peach Law. All Rights Reserved.
         </div>
-
-        <div class="card">
-          <h3>Property Law</h3>
-          <p>
-            General information about property ownership,
-            transactions and related legal topics.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Employment Law</h3>
-          <p>
-            General information about workplace rights,
-            responsibilities and employment-related matters.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Consumer Rights</h3>
-          <p>
-            General information about consumer protections,
-            purchases, services and disputes.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Legal Guidance</h3>
-          <p>
-            Educational resources designed to help visitors
-            understand legal concepts and terminology.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="why">
-      <h2 class="section-title">Why Peach Law?</h2>
-
-      <div class="why">
-
-        <div class="why-item">
-          <h3>Clear Information</h3>
-          <p>
-            Legal topics should be understandable, not unnecessarily complicated.
-          </p>
-        </div>
-
-        <div class="why-item">
-          <h3>Professional Presentation</h3>
-          <p>
-            A clean and modern experience designed around trust and transparency.
-          </p>
-        </div>
-
-        <div class="why-item">
-          <h3>Client-Focused Approach</h3>
-          <p>
-            Information is organized around the questions people commonly ask.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <h2 class="section-title">Contact Peach Law</h2>
-
-      <p>
-        Have a general question or want to learn more?
-        Send us a message.
-      </p>
-
-      <div class="contact-box">
-        <form onsubmit="sendMessage(event)">
-          <input type="text" placeholder="Your name" required>
-          <input type="email" placeholder="Your email" required>
-          <textarea placeholder="Your message" required></textarea>
-          <button class="button" type="submit">Send Message</button>
-        </form>
-      </div>
-    </section>
-
-    <div class="disclaimer">
-      <strong>Important Legal Disclaimer:</strong><br>
-      The information provided on this website is for general educational
-      and informational purposes only. It is not legal advice and does not
-      create an attorney-client relationship. Laws vary by location and
-      individual circumstances. Please consult a qualified legal professional
-      for advice about your specific situation.
-    </div>
-
-  </main>
-
-  <footer>
-    <p>© 2026 Peach Law. All rights reserved.</p>
-    <p>
-      <a href="#home">Home</a> ·
-      <a href="#about">About</a> ·
-      <a href="#services">Services</a> ·
-      <a href="#contact">Contact</a>
-    </p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("nav").classList.toggle("show");
-    }
-
-    function sendMessage(event) {
-      event.preventDefault();
-      alert("Thank you. The contact form is currently a demonstration and has not been connected to email yet.");
-    }
-  </script>
+    </footer>
 
 </body>
 </html>
